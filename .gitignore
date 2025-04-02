@@ -1,0 +1,20 @@
+.gitignore
+===========
+
+# Исключаем веса моделей и окружение
+models/
+.venv/
+__pycache__/
+*.pyc
+
+# Логи и временные файлы
+*.log
+*.tmp
+.DS_Store
+
+# PyCharm / VS Code
+.idea/
+.vscode/
+
+# Jupyter / IPython
+.ipynb_checkpoints/

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e40b3a77-57c5-4a5a-a093-658faa1046eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uniguide-bot.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Главная страница системы.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/added_tokens.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/generation_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/merges.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/model-00001-of-00002.safetensors" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/model-00002-of-00002.safetensors" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/model.safetensors.index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/special_tokens_map.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/tokenizer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/tokenizer_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/phi-2/vocab.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ut2xxNm6zxK0JbXNsifEE2Ubei" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Imanbek.Rustem/Desktop/uniguide-bot/models/phi-2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\models\phi-2" />
+      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\data\JSON" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\data\raw" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-495700d161d3-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.220" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e40b3a77-57c5-4a5a-a093-658faa1046eb" name="Changes" comment="" />
+      <created>1743053800116</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743053800116</updated>
+    </task>
+    <servers />
+  </component>
+</project>
