@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     elif args.command == "ask":
         if args.query:
-            answer = bot.get_best_answer(args.query, paraphrase=False)
+            answer = bot.get_best_answer(args.query, paraphrase=True)
 
 
             print("🤖 Ответ:", answer)

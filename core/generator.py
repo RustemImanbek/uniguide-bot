@@ -9,8 +9,9 @@ def get_phi2():
     global _tokenizer, _model
     if _tokenizer is None or _model is None:
         print("🔄 Загружается модель Phi-2 из ./models/phi2 ...")
-        _tokenizer = AutoTokenizer.from_pretrained("microsoft/phi-2", cache_dir="./models/phi2")
-        _model = AutoModelForCausalLM.from_pretrained("microsoft/phi-2", cache_dir="./models/phi2")
+        _tokenizer = AutoTokenizer.from_pretrained("microsoft/phi-2", local_files_only=True)
+        _model = AutoModelForCausalLM.from_pretrained("microsoft/phi-2", local_files_only=True)
+
         _model.to("cpu")
         print("✅ Модель загружена!")
     return _tokenizer, _model
@@ -19,6 +20,7 @@ def rewrite_answer(question: str, context: str) -> str:
     tokenizer, model = get_phi2()
 
     prompt = (
+        f"Ты — помощник по документации системы UNIVER. Отвечай чётко, понятно и дружелюбно.\n\n"
         f"Вопрос: {question}\n"
         f"Контекст: {context}\n"
         f"Ответ:"
@@ -28,7 +30,7 @@ def rewrite_answer(question: str, context: str) -> str:
         inputs = tokenizer(prompt, return_tensors="pt", truncation=True).to("cpu")
         outputs = model.generate(
             **inputs,
-            max_new_tokens=60,
+            max_new_tokens=100,
             do_sample=True,
             temperature=0.7,
             top_k=50,
