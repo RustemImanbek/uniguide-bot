@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e40b3a77-57c5-4a5a-a093-658faa1046eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_10_3_Microsoft_office_2007_и_выше..json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_11_1_Открыть_браузер_Google_Chrome;.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_12_2_В_адресной_строке_указать_ссылку_на_ин.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_13_3.6.12_Копирование_учебного_плана.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_14_3.6.13_Окно_выбора_нового_учебного_плана.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_1_2.4_Главная_страница_системы.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_2_3.20_Модуль_«Военная_кафедра».json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_3_1_Журнал_посещений_–_функция_предназначе.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_4_2_Аттестация_–_функция_предназначена_для.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_5_3.21_Модуль_«Отдел_кадров».json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_6_3.18_Модуль_«Отдел_тестирования».json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_7_3.16_Модуль_Комендант.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_8_1_Все_пользователи_системы_должны_быть_п.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/JSON/Processed_chapter_9_2_Браузер__Google_Chrome_–_версии_6.0_и.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/download_rut5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/parse_univer_pdf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/search_fallback.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/split_manual_by_chapter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/split_manual_by_chapter_fixed.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/split_manual_by_chapter_v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/Общая Руководство пользователей УНИВЕР (1).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Общая Руководство пользователей УНИВЕР (1).pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,13 +59,16 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Imanbek.Rustem/Desktop/uniguide-bot/models/phi-2"
+    "last_opened_file_path": "C:/Users/Imanbek.Rustem/Desktop/uniguide-bot/data/JSON"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\models\phi-2" />
       <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\data\JSON" />
+      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\scripts" />
+      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot" />
+      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\models\TinyLlama" />
+      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\models\phi-2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\data\raw" />
