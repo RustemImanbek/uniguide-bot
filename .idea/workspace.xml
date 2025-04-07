@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e40b3a77-57c5-4a5a-a093-658faa1046eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/convert_json_to_rag.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_10_3_Microsoft_office_2007_и_выше..json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_11_1_Открыть_браузер_Google_Chrome;.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_12_2_В_адресной_строке_указать_ссылку_на_ин.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_13_3.6.12_Копирование_учебного_плана.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_14_3.6.13_Окно_выбора_нового_учебного_плана.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_1_2.4_Главная_страница_системы.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_2_3.20_Модуль_«Военная_кафедра».json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_3_1_Журнал_посещений_–_функция_предназначе.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_4_2_Аттестация_–_функция_предназначена_для.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_5_3.21_Модуль_«Отдел_кадров».json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_6_3.18_Модуль_«Отдел_тестирования».json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_7_3.16_Модуль_Комендант.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_8_1_Все_пользователи_системы_должны_быть_п.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/Processed_chapter_9_2_Браузер__Google_Chrome_–_версии_6.0_и.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Главная страница системы.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/convert_docx.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/debug_section.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/download_rut5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate_questions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/parse_univer_pdf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/postprocess_converted.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/search_fallback.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/split_manual_by_chapter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/split_manual_by_chapter_fixed.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/split_manual_by_chapter_v2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Общая Руководство пользователей УНИВЕР (1).pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +48,16 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Imanbek.Rustem/Desktop/uniguide-bot/data/JSON&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Imanbek.Rustem/Desktop/uniguide-bot/data/raw&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\data\raw" />
       <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\data\JSON" />
       <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\scripts" />
       <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot" />
       <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\models\TinyLlama" />
-      <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\models\phi-2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\data\raw" />
@@ -83,5 +80,16 @@
       <updated>1743053800116</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
