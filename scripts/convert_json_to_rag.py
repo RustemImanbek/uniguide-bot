@@ -2,7 +2,7 @@ import os
 import json
 
 INPUT_DIR = "../data/JSON"
-OUTPUT_DIR = "rag_md"       # куда сохраняем .md файлы
+OUTPUT_DIR = "../data/rag_docs"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

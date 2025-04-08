@@ -175,7 +175,6 @@
       ],
       "available_roles": ["преподаватель"]
     },
-	    ,
     {
       "id": "teacher_exam_questions",
       "title": "Экзаменационные вопросы",
