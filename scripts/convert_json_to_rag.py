@@ -1,8 +1,12 @@
 import os
 import json
 
-INPUT_DIR = "../data/JSON"
-OUTPUT_DIR = "../data/rag_docs"
+# INPUT_DIR = "../data/JSON"
+# OUTPUT_DIR = "../data/rag_docs"
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+INPUT_DIR = os.path.join(BASE_DIR, "data", "JSON")
+OUTPUT_DIR = os.path.join(BASE_DIR, "data", "rag_docs")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -19,7 +23,7 @@ def json_to_md(module):
 
     steps = module.get("steps", [])
     if steps:
-        lines.append("## 🪜 Шаги")
+        lines.append("## 🩜 Шаги")
         for i, step in enumerate(steps, 1):
             lines.append(f"{i}. {step}")
         lines.append("")
@@ -29,6 +33,23 @@ def json_to_md(module):
         lines.append("## 💡 Подсказки интерфейса")
         for note in ui_notes:
             lines.append(f"– {note}")
+        lines.append("")
+
+    notes = module.get("notes", [])
+    if notes:
+        lines.append("## 📌 Примечания")
+        for note in notes:
+            lines.append(f"– {note}")
+        lines.append("")
+
+    access = module.get("access_control")
+    if access:
+        lines.append("**Права доступа**: " + access)
+        lines.append("")
+
+    keywords = module.get("keywords")
+    if keywords:
+        lines.append("**Ключевые слова**: " + ", ".join(keywords))
         lines.append("")
 
     return "\n".join(lines)
