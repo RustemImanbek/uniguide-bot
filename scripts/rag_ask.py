@@ -1,70 +1,53 @@
 from langchain_community.vectorstores import FAISS
-from langchain_community.document_loaders import DirectoryLoader
-from langchain_community.embeddings import OllamaEmbeddings
-from langchain_community.llms import Ollama
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
+from langchain_community.llms import Ollama
 
-import os
+from langchain_core.prompts import PromptTemplate
+from langchain_core.documents import Document
 
-# 1. Загружаем документы
-print("\U0001F4E5 Загружаем документы...")
-loader = DirectoryLoader(path="data/rag_docs", glob="**/*.md")
-docs = loader.load()
-print(f"✅ Загружено документов: {len(docs)}")
+import re
 
-# 2. Разбиваем на чанки
-splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
-chunks = splitter.split_documents(docs)
-print(f"✂️ Чанков получено: {len(chunks)}")
+# 1. Загружаем embedding
+print("🤖 Загружаем MiniLM embedding...")
+embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-# 3. Получаем embedding через Ollama
-print("\U0001F916 Получаем embedding через Ollama...")
-embedding = OllamaEmbeddings(model="mistral")
+# 2. Загружаем FAISS индекс
+print("📂 Загружаем FAISS индекс...")
+db = FAISS.load_local("faiss_index", embedding, allow_dangerous_deserialization=True)
 
-# 4. Сохраняем или загружаем FAISS
-index_path = "faiss_index"
-
-if os.path.exists(index_path):
-    print("\U0001F4E6 Загружаем сохранённый индекс FAISS...")
-    vectorstore = FAISS.load_local(index_path, embedding, allow_dangerous_deserialization=True)
-else:
-    print("\U0001F9F1 Строим индекс FAISS...")
-    vectorstore = FAISS.from_documents(chunks, embedding)
-    vectorstore.save_local(index_path)
-    print("✅ Индекс сохранён!")
-
-# 5. Настраиваем LLM + Retrieval Chain
-print("\U0001F9E0 Настраиваем LLM и RetrievalQA...")
+# 3. Настраиваем LLM
 llm = Ollama(model="mistral")
-qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=vectorstore.as_retriever())
 
-# 6. Диалог
-print("\n✅ Готово! Введите вопрос или 'exit' для выхода.")
+# 4. Retrieval QA
+qa = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=db.as_retriever(search_kwargs={"k": 10}),
+    return_source_documents=True
+)
+
+print("✅ Готово! Введите вопрос или 'exit' для выхода.\n")
+
 while True:
-    question = input("\n🔹 Вопрос: ")
-    if question.lower() in ["exit", "quit"]:
-        print("👋 До свидания!")
+    query = input("🔹 Вопрос: ")
+    if query.lower() in ["exit", "выход"]:
         break
 
-    # 🧠 Переформулировка вопроса (примитивная логика)
-    lowered = question.lower()
-    if any(keyword in lowered for keyword in ["faq", "вопросы", "часто задаваемые", "поддержка"]):
-        question += " Где находится раздел с часто задаваемыми вопросами (FAQ) в системе?"
+    result = qa.invoke({"query": query})
 
-    # 📡 Получаем документы из ретривера с оценками
-    results = vectorstore.similarity_search_with_score(question, k=10)
-    filtered_docs = [doc for doc, score in results if score > 0.7]
+    docs = result.get("source_documents", [])
+    answer = result.get("result", "").strip()
 
-    if not filtered_docs:
-        print("\n⚠️ Не найдено релевантных документов.")
+    if not docs:
+        print("⚠️ Не удалось найти релевантные документы.")
         continue
 
-    print("\n📚 Контекст, переданный в модель:")
-    for i, (doc, score) in enumerate(results, 1):
-        print(f"\n--- Документ {i} (score={score:.2f}) ---")
-        print(doc.page_content[:1000])
+    print("\n📚 Контекст, переданный в модель:\n")
+    for i, doc in enumerate(docs, 1):
+        text = doc.page_content.strip()
+        preview = text[:1000] + ("..." if len(text) > 1000 else "")
+        print(f"--- Документ {i} ---")
+        print(preview)
+        print()
 
-    print("\n🤖 Генерация ответа...")
-    response = qa_chain.invoke({"query": question})
-    print(f"\n💬 Ответ:\n{response['result']}")
+    print("💬 Ответ:\n", answer, "\n")

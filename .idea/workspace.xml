@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e40b3a77-57c5-4a5a-a093-658faa1046eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/api_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/build_index_optimized.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/bot_wrapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/search.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/vectorizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/faiss_index/index.faiss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/faiss_index/index.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/faiss_index/index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build_index_optimized.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build_index_optimized.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/rag_ask.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/rag_ask.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/scripts/api_server.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
