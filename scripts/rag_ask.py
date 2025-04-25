@@ -1,77 +1,53 @@
-import os
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain.chains import RetrievalQA
 from langchain_community.llms import Ollama
-from langchain.chains import ConversationalRetrievalChain
-from langchain.prompts import PromptTemplate
 
-# 🔧 Настройки
-embedding_model = "sentence-transformers/all-MiniLM-L6-v2"
-llm_model = "mistral"
-index_path = "faiss_index"
+from langchain_core.prompts import PromptTemplate
+from langchain_core.documents import Document
 
-# 🧠 Инструкция (system prompt)
-system_prompt = (
-    "Ты — помощник по системе UNIVER. Отвечай строго на русском языке. "
-    "Если вопрос требует действий, опиши пошагово. Упоминай модуль, если это важно. "
-    "Если нет информации — честно скажи и предложи, где это может быть в интерфейсе."
-)
+import re
 
-# 📄 Prompt-шаблон для history condense
-prompt_template = PromptTemplate.from_template(
-    """Вопрос: {question}
+# 1. Загружаем embedding
+print("🤖 Загружаем MiniLM embedding...")
+embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-Инструкция: {instruction}"""
-)
-
-# 📆 Эмбеддинги и FAISS
-print("🔍 Загружаем MiniLM embedding...")
-embedding = HuggingFaceEmbeddings(model_name=embedding_model)
-
+# 2. Загружаем FAISS индекс
 print("📂 Загружаем FAISS индекс...")
-db = FAISS.load_local(index_path, embedding, allow_dangerous_deserialization=True)
+db = FAISS.load_local("faiss_index", embedding, allow_dangerous_deserialization=True)
 
-# 🧬 LLM и цепочка
-llm = Ollama(model=llm_model)
+# 3. Настраиваем LLM
+llm = Ollama(model="mistral")
 
-qa = ConversationalRetrievalChain.from_llm(
+# 4. Retrieval QA
+qa = RetrievalQA.from_chain_type(
     llm=llm,
     retriever=db.as_retriever(search_kwargs={"k": 10}),
-    return_source_documents=True,
-    condense_question_prompt=prompt_template,
-    chain_type="stuff"
+    return_source_documents=True
 )
 
-# 🔊 Диалоговая история
-chat_history = []
-
-print("✅ Готово! Введите вопрос (или 'exit' для выхода).\n")
+print("✅ Готово! Введите вопрос или 'exit' для выхода.\n")
 
 while True:
-    query = input("🔹 Вопрос: ").strip()
+    query = input("🔹 Вопрос: ")
     if query.lower() in ["exit", "выход"]:
         break
 
-    try:
-        result = qa.invoke({
-            "question": query,
-            "chat_history": chat_history[-15:],
-            "instruction": system_prompt
-        })
+    result = qa.invoke({"query": query})
 
-        answer = result.get("answer", "").strip()
-        print("\n💬 Ответ:\n", answer)
+    docs = result.get("source_documents", [])
+    answer = result.get("result", "").strip()
 
-        # 📃 Контекст
-        sources = result.get("source_documents", [])
-        if sources:
-            print("\n📃 Контекст (top 3):")
-            for i, doc in enumerate(sources[:3], 1):
-                content = doc.page_content.strip()
-                print(f"\n--- Документ {i} ---\n{content[:700]}...")
+    if not docs:
+        print("⚠️ Не удалось найти релевантные документы.")
+        continue
 
-        # 📅 Сохраняем историю
-        chat_history.append((query, answer))
+    print("\n📚 Контекст, переданный в модель:\n")
+    for i, doc in enumerate(docs, 1):
+        text = doc.page_content.strip()
+        preview = text[:1000] + ("..." if len(text) > 1000 else "")
+        print(f"--- Документ {i} ---")
+        print(preview)
+        print()
 
-    except Exception as e:
-        print("\n️️️️🚧 Ошибка:", e)
+    print("💬 Ответ:\n", answer, "\n")

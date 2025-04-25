@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чат UNIVER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chatbox {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbox-header {
+            background: #2196F3;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .chatbox-messages {
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            margin: 5px 0;
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .bot {
+            background-color: #e1f5fe;
+            align-self: flex-start;
+        }
+
+        .user {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+        }
+
+        .chatbox-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        .chatbox-input input {
+            flex-grow: 1;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .chatbox-input button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            cursor: pointer;
+        }
+
+        .chatbox-input input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<div class="chatbox">
+    <div class="chatbox-header">Чат UNIVER</div>
+    <div class="chatbox-messages" id="messages"></div>
+    <div class="chatbox-input">
+        <input type="text" id="user-input" placeholder="Введите сообщение...">
+        <button onclick="sendMessage()">➤</button>
+    </div>
+</div>
+
+<script>
+    async function sendMessage() {
+        const input = document.getElementById('user-input');
+        const messageText = input.value.trim();
+        if (!messageText) return;
+
+        input.value = '';
+
+        // Показать сообщение пользователя
+        const userMsg = document.createElement('div');
+        userMsg.classList.add('message', 'user');
+        userMsg.innerText = messageText;
+        document.getElementById('messages').appendChild(userMsg);
+
+        // Получить ответ бота
+        const response = await fetch('http://10.7.0.106:8000/ask', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: messageText })
+        });
+
+        const data = await response.json();
+
+        // Показать ответ бота
+        const botMsg = document.createElement('div');
+        botMsg.classList.add('message', 'bot');
+        botMsg.innerText = data.answer;
+        document.getElementById('messages').appendChild(botMsg);
+
+        // Автопрокрутка
+        const messagesDiv = document.getElementById('messages');
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+</script>
+</body>
+</html>
