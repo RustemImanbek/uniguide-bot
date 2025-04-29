@@ -5,11 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e40b3a77-57c5-4a5a-a093-658faa1046eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/html/chat_widget.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/test_rag_bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/api_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/api_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/rag_ask.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/rag_ask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON.zip" beforeDir="false" afterPath="$PROJECT_DIR$/data/JSON.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Academic_Office_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Admission_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Advisor_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Alternative_PPS.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Attendance_Journal_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Attestation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Bachelor_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Catalogs_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Credits_GPA_Stipend_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Curatorial_Events_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Dean_Assistant_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Discipline_Catalog_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Distance_Courses_Modules.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Documents_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Dormitory_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/E_Services_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Educational_Dept_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Exam_Commission_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Extra_Semester_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Finance_DDPU_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Indicative_Plan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Interactive_Syllabus_Stats_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Main_Page_Modules.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Methodical_Department_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Military_Department_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Prorector_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/QR_Generator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Questionnaire.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Rating_Input.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Registrar_Office_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Schedule_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Student_Office_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Supplementary_Modules.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Teacher_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Test_Questions_Module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JSON/Testing_Department_Module.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
