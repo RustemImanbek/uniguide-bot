@@ -3,11 +3,11 @@ import json
 import re
 from datetime import date
 import os
-from docx import Document
 
+# === 1. Абсолютный путь к .docx ===
 base = os.path.abspath(os.path.join(os.getcwd(), ".."))
-path = os.path.join(base, "data", "raw", "main_page_converted.docx")
-doc = Document(path)
+input_path = os.path.join(base, "data", "NewRaw", "main_page_converted.docx")
+doc = Document(input_path)
 
 # === 2. Собираем все текстовые блоки ===
 paragraphs = [p.text.strip() for p in doc.paragraphs if p.text.strip()]
@@ -69,7 +69,7 @@ for func in functions:
             })
         func["description"] = url_pattern.sub("", func["description"]).strip()
 
-# === 7. Дополнительные разделы (вручную) ===
+# === 7. Дополнительные разделы ===
 additional_sections = [
     "Академическая политика",
     "Политика академической честности",
@@ -115,8 +115,12 @@ result = {
     "additional_sections": additional_sections
 }
 
-# === 9. Сохраняем ===
-with open("main_page_of_system.json", "w", encoding="utf-8") as f:
+# === 9. Абсолютный путь к сохранению ===
+output_dir = os.path.join(base, "data", "NewJson")
+os.makedirs(output_dir, exist_ok=True)
+output_path = os.path.join(output_dir, "main_page_of_system.json")
+
+with open(output_path, "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
-print("✅ JSON сохранён в main_page_of_system.json")
+print("✅ JSON сохранён в", output_path)
