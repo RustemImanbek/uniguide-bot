@@ -23,13 +23,16 @@ heading_pattern = re.compile(rf"^({'|'.join(re.escape(k) for k in function_keywo
 
 # === Чистка текста
 def clean_description(text):
+    text = re.sub(r"\(?рис(унок)?\.?\s*\d+\)?", "", text, flags=re.IGNORECASE)
     lines = text.split("\n")
     cleaned = []
-    skip = re.compile(r"(рисунок\s*\d+|скаченн|ввод стоимости|количество кредитов|карточка студента)", re.IGNORECASE)
+    skip = re.compile(r"(скаченн|ввод стоимости|количество кредитов|карточка студента)", re.IGNORECASE)
     seen = set()
     for line in lines:
         line = line.strip()
         if not line or skip.search(line) or line.lower() in seen:
+            continue
+        if re.match(r"^[-–—]\s*\b", line):
             continue
         cleaned.append(line)
         seen.add(line.lower())
@@ -37,17 +40,24 @@ def clean_description(text):
 
 # === Шаги
 def extract_steps(text):
-    verbs = r"(?:нажмите|выберите|перейдите|введите|заполните|появится|откройте|сохраните|отправьте|загрузите)"
-    matches = re.findall(rf"{verbs}[^.\n]{{10,}}", text, re.IGNORECASE)
-    return [s.strip().capitalize() for s in matches]
+    verbs = r"(нажмите|выберите|перейдите|введите|заполните|появится|откройте|сохраните|отправьте|загрузите|формируется|сохранится|отчет)"
+    lines = text.split("\n")
+    steps = []
+    for line in lines:
+        if re.match(rf"^\s*{verbs}", line.strip(), re.IGNORECASE):
+            sentence = re.split(r"[.!?]", line.strip())[0]
+            steps.append(sentence.capitalize())
+    return steps
 
 # === Аннотация
 def extract_summary(text):
-    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+    text = text.replace("\n", " ").strip()
+    sentences = re.split(r"(?<=[.!?])\s+", text)
     for s in sentences:
-        if len(s) > 30:
-            return s.strip()[:200]
-    return text[:200]
+        s = s.strip()
+        if len(s) > 40:
+            return s[:200].rsplit(" ", 1)[0] + "..."
+    return text[:200].rsplit(" ", 1)[0] + "..."
 
 # === Ключевые слова
 def extract_keywords(text):
@@ -57,6 +67,14 @@ def extract_keywords(text):
         "повторное", "пересдача", "поиск"
     ]
     return sorted(set(w for w in base if re.search(rf"\b{w}\b", text, re.IGNORECASE)))
+
+# === Related functions
+def find_related(name, all_names, text):
+    desc_lower = text.lower()
+    return sorted([
+        other for other in all_names
+        if other.lower() != name.lower() and re.search(rf"\b{re.escape(other.lower())}\b", desc_lower)
+    ])
 
 # === Сбор блоков
 blocks = []
@@ -75,36 +93,59 @@ for para in paragraphs:
 if current_name and buffer:
     blocks.append({"name": current_name, "text": buffer.strip()})
 
-# === Функции
-function_names = [b["name"] for b in blocks]
+# === Сбор функций (с отделением Повторного обучения)
+function_names = []
 functions = []
 
 for block in blocks:
     name = block["name"]
     raw = block["text"]
     desc = clean_description(raw)
-    steps = extract_steps(desc)
-    summary = extract_summary(desc)
-    keywords = extract_keywords(desc)
-    links = [{"url": u, "purpose": "см. подробнее", "type": "external"} for u in re.findall(r"https?://[^\s]+", desc)]
-    desc = re.sub(r"https?://[^\s]+", "", desc)
 
-    related = sorted([
-        other for other in function_names
-        if other != name and re.search(rf"\b{re.escape(other)}\b", desc, re.IGNORECASE)
-    ])
+    # === Отделение Повторного обучения
+    if name == "Кредиты" and "Повторное обучение" in desc:
+        split_pos = desc.find("Повторное обучение")
+        kredity_text = desc[:split_pos].strip()
+        povtor_text = desc[split_pos:].strip()
 
-    functions.append({
-        "name": name,
-        "summary": summary,
-        "description": desc,
-        "steps": steps,
-        "keywords": keywords,
-        "links": links,
-        "related_functions": related
-    })
+        for sub_name, content in [("Кредиты", kredity_text), ("Повторное обучение", povtor_text)]:
+            summary = extract_summary(content)
+            steps = extract_steps(content)
+            keywords = extract_keywords(content)
+            links = [{"url": u, "purpose": "см. подробнее", "type": "external"} for u in re.findall(r"https?://[^\s]+", content)]
+            content = re.sub(r"https?://[^\s]+", "", content)
+            function_names.append(sub_name)
+            functions.append({
+                "name": sub_name,
+                "summary": summary,
+                "description": content,
+                "steps": steps,
+                "keywords": keywords,
+                "links": links,
+                "related_functions": []
+            })
+    else:
+        summary = extract_summary(desc)
+        steps = extract_steps(desc)
+        keywords = extract_keywords(desc)
+        links = [{"url": u, "purpose": "см. подробнее", "type": "external"} for u in re.findall(r"https?://[^\s]+", desc)]
+        desc = re.sub(r"https?://[^\s]+", "", desc)
+        function_names.append(name)
+        functions.append({
+            "name": name,
+            "summary": summary,
+            "description": desc,
+            "steps": steps,
+            "keywords": keywords,
+            "links": links,
+            "related_functions": []
+        })
 
-# === JSON
+# === Заполнение related_functions
+for func in functions:
+    func["related_functions"] = find_related(func["name"], function_names, func["description"])
+
+# === Финальный JSON
 result = {
     "metadata": {
         "file_name": "Модуль Бухгалтерия и Договоры ДДПУ",
@@ -112,7 +153,7 @@ result = {
         "source_type": "university_documentation",
         "last_updated": str(date.today()),
         "language": "ru",
-        "document_version": "1.3",
+        "document_version": "1.6.1",
         "doc_id": "module_buh_ddpu",
         "tags": ["бухгалтерия", "договора", "оплаты", "платные услуги", "заявки", "ДППУ"],
         "audience": "staff_only",
@@ -129,4 +170,4 @@ os.makedirs(os.path.dirname(output_path), exist_ok=True)
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
-print("✅ Финальный JSON v3 создан:", output_path)
+print("✅ Финальный JSON v6.1 создан:", output_path)
