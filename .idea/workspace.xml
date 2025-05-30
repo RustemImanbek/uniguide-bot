@@ -5,72 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e40b3a77-57c5-4a5a-a093-658faa1046eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/converters/convert_bakalavr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/converters/metod_otdel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NewRaw/metod_otdel.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/converters/main_page_of_system.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/converters/main_page_of_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/converters/main_page_of_system.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/main_page_of_system_2025-04-04 — копия.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/JSON/main_page_of_system_2025-04-04 — копия.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JSON/main_page_of_system_2025-04-04.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/JSON/main_page_of_system_2025-04-04.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/NewJson/main_page_of_system.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Алтернативные ППС.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Анкета индикативного плана.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Аттестация.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Ввод анкеты ППС.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Вопросник.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Генерация QR кода.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Дистанционные курсы.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Документы.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Журнал посещений.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Интерактивный силлабус преподавателей.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Каталог дисциплин.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Каталоги.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Комиссия.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Комплекты тестовых экзаменационных вопросов.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Кредиты УП и GPA.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Кураторские мероприятия.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Бакалавр».docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Бухгалтерия ДДПУ».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Бухгалтерия ДДПУ».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Военная кафедра».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Военная кафедра».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Воспитательный отдел».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Воспитательный отдел».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Дополнительный семестр».docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Зам.декана».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Зам.декана».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Куратор-эдвайзер».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Куратор-эдвайзер».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Методический отдел».docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Отдел тестирования».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Отдел тестирования».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Офис регистратора».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Офис регистратора».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Преподаватель».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Преподаватель».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Приемная комиссия».docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Проректор».docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Расписание».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Расписание».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Студенческий отдел».docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль «Учебный отдел».docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль «Учебный отдел».docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль Е- услуги.docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль Е- услуги.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Модуль Комендант.docx" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/Модуль Комендант.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Мои кружки.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Мои файлы.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Нарушения.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Настройки экзаменационных вопросов.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Параметры.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Педагогическая нагрузка.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Период пересдачи для FX оценок.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Поиск студентов.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Практика.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Преподаватели.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Приказы на зачисление.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Приказы.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Расписани1.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Расписание.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Руководство пользователя абитуриента.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Свои работы на антиплагиат.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Согласование ИУП.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Список приказов.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Студенты с правом пересдачи FX.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Типы расчета.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Университетские мероприятия.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/Учебные планы.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw_backup/Главная страница системы .docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/NewJson/bakalavr_module.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/NewJson/bakalavr_module.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/NewJson/main_page_of_system.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/NewJson/main_page_of_system.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/NewJson/metodicheskiy_otdel.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/NewJson/metodicheskiy_otdel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/NewRaw/~$kalavr_module.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,15 +40,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Imanbek.Rustem/Desktop/uniguide-bot/data/NewRaw"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Imanbek.Rustem/Desktop/uniguide-bot/data/NewRaw&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Imanbek.Rustem\Desktop\uniguide-bot\data\NewRaw" />
