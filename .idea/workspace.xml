@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e40b3a77-57c5-4a5a-a093-658faa1046eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/converters/main_page_of_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/converters/main_page_of_system.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/NewJson/bakalavr_module.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/NewJson/bakalavr_module.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/NewJson/main_page_of_system.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/NewJson/main_page_of_system.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/NewJson/metodicheskiy_otdel.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/NewJson/metodicheskiy_otdel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/NewRaw/~$kalavr_module.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
